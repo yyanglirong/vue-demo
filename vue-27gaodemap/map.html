@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=9a09c4d7396458a59a3df7f48ecd7804"></script> 
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #container {
+            width:100%;
+            height:750px; 
+        }  
+    </style>
+</head>
+<body>
+    <div id="container"></div> 
+    <script>
+        var map = new AMap.Map('container');
+        var map = new AMap.Map('container', {
+        resizeEnable:true,
+        center: [114.503506,30.552515],
+        viewMode:'3D',
+        zoom:13
+    });
+    var trafficLayer = new AMap.TileLayer.Traffic({
+        zIndex: 10
+    });
+    map.add(trafficLayer);
+    </script>
+</body>
+</html>
